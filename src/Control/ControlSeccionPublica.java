@@ -17,13 +17,24 @@ import Control.ControlAgregaUsuario;
 import Control.ControlUsuario;
 import Control.ControlVistaVuelos;
 import Control.ControlLogueo;
+import Modelo.ModeloLogin;
+import Modelo.ModeloSeccionPublica;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.WindowEvent;
 import javax.swing.JButton;
 /**
  *
  * @author Fernando
  */
-public class ControlSeccionPublica {
+public class ControlSeccionPublica extends AbstractController{
+
+    public ControlSeccionPublica(VistaSeccionPublica vistaSeccionPublica, ModeloSeccionPublica modeloSeccionPublica) {  
+        this.vistaSeccionPublica = vistaSeccionPublica;
+        this.modeloSeccionPublica = modeloSeccionPublica;
+        vistaSeccionPublica.setControlador(this);
+     }
 
    
     public VistaSeccionPublica getVistaSeccionPublica() {
@@ -78,29 +89,119 @@ public class ControlSeccionPublica {
     
     
     public ServicioUsuario accesoADatosUsuario;
-    
-    
-    public ControlSeccionPublica(VistaSeccionPublica vistaSeccionPublica) {
-        this.vistaSeccionPublica = vistaSeccionPublica;
-        vistaSeccionPublica.setControlador(this);
-    }
-    
+    ModeloSeccionPublica modeloSeccionPublica;
+ 
     
     public void actionPerformed(ActionEvent e) {
         JButton btn = (JButton)e.getSource();
         
-        if(btn.getText().equalsIgnoreCase("btnRegistrarse")) {
+        if(btn.getText().equalsIgnoreCase("registrarse")) {
             vistaLogueo = new VistaLogueo();
-            accesoADatosUsuario = new ServicioUsuario();
-            //controlLogueo = new ControlLogueo(vistaLogueo);
-            //controlLogueo.getVistaLogueo().setVisible(true); 
+            ModeloLogin modeloLogin = new ModeloLogin();
+            ControlLogueo controlLogueo = new ControlLogueo(modeloLogin, vistaLogueo);
+            vistaLogueo.setVisible(true);
         }
         
-        if(btn.getText().equalsIgnoreCase("btnCrearCuenta")) {
-
+        if(btn.getText().equalsIgnoreCase("Crear cuenta")) {
+            System.out.println("Control.ControlSeccionPublica.actionPerformed()");
+        
         }
          
+        
+        if(btn.getText().equalsIgnoreCase("buscar vuelos")) {
+            System.out.println("Control.ControlSeccionPublica.actionPerformed()");
+        }
           
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void windowOpened(WindowEvent we) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent we) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void windowActivated(WindowEvent we) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent we) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void windowIconified(WindowEvent we) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void windowClosed(WindowEvent we) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void windowClosing(WindowEvent we) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mostrarVista() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void ocultarVista() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void cerrarVista() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

@@ -5,6 +5,8 @@
  */
 package aerolinea;
 
+import Control.ControlSeccionPublica;
+import Modelo.ModeloSeccionPublica;
 import Vista.VistaSeccionPublica;
 
 /**
@@ -18,7 +20,11 @@ public class Aerolinea {
      */
     public static void main(String[] args) {
         
-    VistaSeccionPublica.main(args);
+        VistaSeccionPublica vistaSeccionPublica = new VistaSeccionPublica();
+        ModeloSeccionPublica modeloSeccionPublica = new ModeloSeccionPublica();
+        ControlSeccionPublica controlSeccionPublica = new ControlSeccionPublica(vistaSeccionPublica, modeloSeccionPublica);
+        
+        vistaSeccionPublica.setVisible(true);
                 
     }
     

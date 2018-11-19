@@ -52,28 +52,25 @@ public class VistaAgregaAvion extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Agregar Aviones");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(258, 6, 131, 28);
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(130, 83, 121, 28);
+        jTextField1.setBounds(130, 83, 121, 20);
 
         jLabel2.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Identificador");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(15, 87, 83, 19);
 
         jLabel3.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Ruta");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(15, 132, 30, 19);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(130, 129, 121, 26);
+        jComboBox1.setBounds(130, 129, 121, 20);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -93,20 +90,17 @@ public class VistaAgregaAvion extends javax.swing.JFrame {
         getContentPane().add(jScrollPane2);
         jScrollPane2.setBounds(30, 280, 615, 124);
 
-        btnGuardar.setForeground(new java.awt.Color(0, 0, 0));
         btnGuardar.setText("Guardar");
         getContentPane().add(btnGuardar);
-        btnGuardar.setBounds(15, 187, 73, 28);
+        btnGuardar.setBounds(15, 187, 71, 23);
 
-        btnCancelar.setForeground(new java.awt.Color(0, 0, 0));
         btnCancelar.setText("Cancelar");
         getContentPane().add(btnCancelar);
-        btnCancelar.setBounds(106, 187, 78, 28);
+        btnCancelar.setBounds(106, 187, 75, 23);
 
-        btnEliminar.setForeground(new java.awt.Color(0, 0, 0));
         btnEliminar.setText("Eliminar");
         getContentPane().add(btnEliminar);
-        btnEliminar.setBounds(202, 187, 74, 28);
+        btnEliminar.setBounds(202, 187, 69, 23);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/57a032df328f4fcd5e94ae033ccfb910.jpg"))); // NOI18N
         getContentPane().add(jLabel4);

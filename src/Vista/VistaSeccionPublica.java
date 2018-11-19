@@ -32,7 +32,7 @@ public class VistaSeccionPublica extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
-        jButton1 = new javax.swing.JButton();
+        btnBuscarVuelos = new javax.swing.JButton();
         btnCrearCuenta = new javax.swing.JButton();
         btnRegistrarse = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -50,23 +50,25 @@ public class VistaSeccionPublica extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(850, 530));
         getContentPane().setLayout(null);
 
-        jButton1.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Buscar Vuelos");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(27, 21, 119, 31);
+        btnBuscarVuelos.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        btnBuscarVuelos.setText("Buscar Vuelos");
+        btnBuscarVuelos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarVuelosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnBuscarVuelos);
+        btnBuscarVuelos.setBounds(27, 21, 123, 27);
 
         btnCrearCuenta.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        btnCrearCuenta.setForeground(new java.awt.Color(0, 0, 0));
         btnCrearCuenta.setText("Crear Cuenta");
         getContentPane().add(btnCrearCuenta);
-        btnCrearCuenta.setBounds(560, 30, 114, 31);
+        btnCrearCuenta.setBounds(560, 30, 119, 27);
 
         btnRegistrarse.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        btnRegistrarse.setForeground(new java.awt.Color(0, 0, 0));
         btnRegistrarse.setText("Registrarse");
         getContentPane().add(btnRegistrarse);
-        btnRegistrarse.setBounds(680, 30, 101, 31);
+        btnRegistrarse.setBounds(680, 30, 105, 27);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/las-sorprendentes-razones-por-las-que-los-aviones-son-blancos.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -95,6 +97,10 @@ public class VistaSeccionPublica extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBuscarVuelosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarVuelosActionPerformed
+ 
+    }//GEN-LAST:event_btnBuscarVuelosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,9 +139,9 @@ public class VistaSeccionPublica extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscarVuelos;
     private javax.swing.JButton btnCrearCuenta;
     private javax.swing.JButton btnRegistrarse;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -152,8 +158,9 @@ public class VistaSeccionPublica extends javax.swing.JFrame {
 
     public void setControlador(ControlSeccionPublica aThis) {
         this.controlador = aThis;
-        btnCrearCuenta.addActionListener((ActionListener) aThis);
-        btnRegistrarse.addActionListener((ActionListener) aThis);
+        btnCrearCuenta.addActionListener(aThis);
+        btnRegistrarse.addActionListener(aThis);
+        btnBuscarVuelos.addActionListener(aThis);
     }
 
     
