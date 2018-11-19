@@ -90,7 +90,7 @@ public class ControlSeccionPublica extends AbstractController{
     public ControlAgregaUsuario controlAgregaUsuario;
     public ControlVuelos controlVuelos;
     
-    
+     ModeloVuelos modeloVuelos ;
     
 
     ModeloAgregarUsuario modeloAgregarUsuario;
@@ -118,10 +118,10 @@ public class ControlSeccionPublica extends AbstractController{
         
         if(btn.getText().equalsIgnoreCase("buscar vuelos")) {
             vistaVuelos = new VistaVuelos();
-            ModeloVuelos modeloVuelos =  new ModeloVuelos();
+            modeloVuelos =  new ModeloVuelos();
             ControlVuelos control = new ControlVuelos(modeloVuelos, vistaVuelos);
-            vistaAgregaUsuario.setVisible(true);        
-        }
+            vistaVuelos.setVisible(true);        
+         }
           
     }
 
