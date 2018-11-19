@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import Control.ControlVuelos;
+
 /**
  *
  * @author Fernando
@@ -29,7 +31,7 @@ public class VistaVuelos extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
         jTextField4 = new javax.swing.JTextField();
@@ -37,7 +39,7 @@ public class VistaVuelos extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        btnRefrescar = new javax.swing.JButton();
         jTextField5 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -57,9 +59,9 @@ public class VistaVuelos extends javax.swing.JFrame {
         getContentPane().add(jComboBox1);
         jComboBox1.setBounds(112, 56, 125, 20);
 
-        jButton1.setText("Buscar");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(24, 365, 65, 23);
+        btnBuscar.setText("Buscar");
+        getContentPane().add(btnBuscar);
+        btnBuscar.setBounds(24, 365, 65, 23);
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alemania (Berlín)", "Brazil (Sao Paulo)", "China (Pekín)", "Costa Rica (Alajuela)", "EEUU (Texas)" }));
         getContentPane().add(jComboBox2);
@@ -96,9 +98,9 @@ public class VistaVuelos extends javax.swing.JFrame {
         getContentPane().add(jScrollPane2);
         jScrollPane2.setBounds(6, 408, 808, 120);
 
-        jButton2.setText("Refrescar");
-        getContentPane().add(jButton2);
-        jButton2.setBounds(109, 365, 79, 23);
+        btnRefrescar.setText("Refrescar");
+        getContentPane().add(btnRefrescar);
+        btnRefrescar.setBounds(109, 365, 79, 23);
         getContentPane().add(jTextField5);
         jTextField5.setBounds(637, 22, 130, 20);
 
@@ -153,8 +155,8 @@ public class VistaVuelos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnRefrescar;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -170,4 +172,12 @@ public class VistaVuelos extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
+
+    ControlVuelos controlVuelos;
+            
+    public void setController(ControlVuelos aThis) {
+    this.controlVuelos = aThis;
+    btnBuscar.addActionListener(aThis);
+    btnRefrescar.addActionListener(aThis);
+    }
 }

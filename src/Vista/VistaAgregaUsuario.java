@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import Control.ControlAgregaUsuario;
+
 /**
  *
  * @author Fernando
@@ -31,8 +33,8 @@ public class VistaAgregaUsuario extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -69,13 +71,13 @@ public class VistaAgregaUsuario extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(113, 6, 218, 24);
 
-        jButton1.setText("Cancelar");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(194, 499, 106, 40);
+        btnCancelar.setText("Cancelar");
+        getContentPane().add(btnCancelar);
+        btnCancelar.setBounds(194, 499, 106, 40);
 
-        jButton2.setText("Guardar");
-        getContentPane().add(jButton2);
-        jButton2.setBounds(50, 500, 94, 40);
+        btnGuardar.setText("Guardar");
+        getContentPane().add(btnGuardar);
+        btnGuardar.setBounds(50, 500, 94, 40);
 
         jLabel2.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel2.setText("Usuario");
@@ -201,10 +203,11 @@ public class VistaAgregaUsuario extends javax.swing.JFrame {
             }
         });
     }
+    ControlAgregaUsuario controlAgregaUsuario;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnGuardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -232,4 +235,11 @@ public class VistaAgregaUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
+
+    public void setController(ControlAgregaUsuario controlAgregaUsuario) {
+
+        this.controlAgregaUsuario = controlAgregaUsuario;
+        btnCancelar.addActionListener(controlAgregaUsuario);
+        btnGuardar.addActionListener(controlAgregaUsuario);
+    }
 }

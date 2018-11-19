@@ -5,6 +5,7 @@
  */
 package Control;
 
+ 
 import AccesoADatos.ServicioUsuario;
 import Vista.VistaSeccionPublica;
 import Vista.VistaLogueo;
@@ -15,10 +16,12 @@ import Modelo.ModeloUsuario;
 
 import Control.ControlAgregaUsuario;
 import Control.ControlUsuario;
-import Control.ControlVistaVuelos;
+import Control.ControlVuelos;
 import Control.ControlLogueo;
+import Modelo.ModeloAgregarUsuario;
 import Modelo.ModeloLogin;
 import Modelo.ModeloSeccionPublica;
+import Modelo.ModeloVuelos;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -85,9 +88,12 @@ public class ControlSeccionPublica extends AbstractController{
     
     public ControlLogueo controlLogueo;
     public ControlAgregaUsuario controlAgregaUsuario;
-    public ControlVistaVuelos controlVuelos;
+    public ControlVuelos controlVuelos;
     
     
+    
+
+    ModeloAgregarUsuario modeloAgregarUsuario;
     public ServicioUsuario accesoADatosUsuario;
     ModeloSeccionPublica modeloSeccionPublica;
  
@@ -103,13 +109,18 @@ public class ControlSeccionPublica extends AbstractController{
         }
         
         if(btn.getText().equalsIgnoreCase("Crear cuenta")) {
-            System.out.println("Control.ControlSeccionPublica.actionPerformed()");
-        
+            vistaAgregaUsuario = new VistaAgregaUsuario();
+            modeloAgregarUsuario= new ModeloAgregarUsuario();
+            ControlAgregaUsuario controlAgregaUsuario = new ControlAgregaUsuario(modeloAgregarUsuario, vistaAgregaUsuario);
+            vistaAgregaUsuario.setVisible(true);        
         }
          
         
         if(btn.getText().equalsIgnoreCase("buscar vuelos")) {
-            System.out.println("Control.ControlSeccionPublica.actionPerformed()");
+            vistaVuelos = new VistaVuelos();
+            ModeloVuelos modeloVuelos =  new ModeloVuelos();
+            ControlVuelos control = new ControlVuelos(modeloVuelos, vistaVuelos);
+            vistaAgregaUsuario.setVisible(true);        
         }
           
     }

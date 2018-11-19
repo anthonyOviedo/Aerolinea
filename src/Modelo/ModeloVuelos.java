@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Control;
+package Modelo;
 
 /**
  *
- * @author Fernando
+ * @author Anthony
  */
-public class ControlVistaVuelos {
-    
+public class ModeloVuelos {
+    public ModeloVuelos(){};
 }
